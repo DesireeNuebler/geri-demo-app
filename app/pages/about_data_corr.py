@@ -15,7 +15,7 @@ st.title("About the Data")
 with open("app/assets/corr_plot.html", "r", encoding="utf-8") as f:
         html = f.read()
 
-st.components.v1.html(html, height=1000, scrolling=True)
+st.iframe(srcdoc=html, height=1000, scrolling=True)
 
 
 
