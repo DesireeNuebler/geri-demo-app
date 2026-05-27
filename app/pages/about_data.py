@@ -14,7 +14,7 @@ st.markdown("The patients included in this study are a subgroup of participants 
 with open("app/assets/spider_plot.html", "r", encoding="utf-8") as f:
     html = f.read()
 
-st.components.v1.html(html, height=500)
+st.st.iframe(html, height=500)
 st.markdown("The mean values over the groups have been normalized to be able to display them together in a radar plot due to different orignal feature scales.")
 st.markdown(
     "**This plot is interactive — hover to see values and click legend items to show or hide groups.**"
