@@ -19,7 +19,7 @@ with open("app/assets/kernel_animation.html", "r") as f:
 
 
 with col1:
-     st.components.v1.html(kernel_anim_html, height=1000, scrolling=True)
+     st.iframe(srcdoc=kernel_anim_html, height=1000, scrolling=True)
 
 
 if st.button("⬅ Back"): 
