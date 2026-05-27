@@ -13,7 +13,7 @@ st.title("Shap Values for the Support Vector Machine")
 
 st.markdown("Think of SHAP values as an unknown currency:\
              We cannot explicity calculate each predictors effect but we can tell how much of the currency\
-             a predictor owns and how much this currency pushes to positive or to negative class.\
+             a predictor owns and how much this currency pushes to positive or to negative class. Here, the positive class refers to being GH-resistant.\
              \nSome predictors contributions correlate with other features contributions.")
 
 st.image("app/assets/shap_values.png", width=800)
