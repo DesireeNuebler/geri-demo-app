@@ -8,7 +8,7 @@ col1, col2 = st.columns([2, 1])
 with col1: 
     st.title("") 
 with col2: 
-    st.image("app/assets/LMU_Klinikum_Logo.jpg", width=800)
+    st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
 
 
 st.title("GERI - A Demo App for Risk Prediction")
