@@ -6,12 +6,12 @@ col1, col2 = st.columns([2, 1])
 with col1: 
     st.title("") 
 with col2: 
-    st.image("app/assets/LMU_Klinikum_Logo.jpg", width=800)
+    st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
  
 st.title("About the Data")
 
 st.markdown("The patients included in this study are a subgroup of participants in the “Munich Sarcopenia Registry” (MUSAR), an ongoing registry study aimed at identifying modifiable risk factors and the underlying pathophysiological mechanisms of sarcopenia. Below you can see an overview of the patients characteristics with respect to the expert based predictors.")
-with open("app/assets/spider_plot.html", "r", encoding="utf-8") as f:
+with open("assets/spider_plot.html", "r", encoding="utf-8") as f:
     html = f.read()
 
 st.iframe(srcdoc=html, height=500)

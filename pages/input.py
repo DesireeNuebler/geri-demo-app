@@ -6,7 +6,7 @@ col1, col2 = st.columns([2, 1])
 with col1: 
     st.title("") 
 with col2: 
-    st.image("app/assets/LMU_Klinikum_Logo.jpg", width=800)
+    st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
 
 st.title("Insert Patient Values...")
 st.markdown("Please enter the following values for your patient. The default values represent the average patient found in our dataset. We do not store any inserted values.")

@@ -6,7 +6,7 @@ col1, col2 = st.columns([2, 1])
 with col1: 
     st.title("") 
 with col2: 
-    st.image("app/assets/LMU_Klinikum_Logo.jpg", width=800)
+    st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
 
 
 st.title("The SVM Kernel Trick")
@@ -14,7 +14,7 @@ st.title("The SVM Kernel Trick")
 col1, col2 = st.columns([10, 1])   # adjust ratio to move left/right
 
 
-with open("app/assets/kernel_animation.html", "r") as f:
+with open("assets/kernel_animation.html", "r") as f:
     kernel_anim_html = f.read()
 
 

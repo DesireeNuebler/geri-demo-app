@@ -7,7 +7,7 @@ col1, col2 = st.columns([2, 1])
 with col1: 
     st.title("") 
 with col2: 
-    st.image("app/assets/LMU_Klinikum_Logo.jpg", width=800)
+    st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
  
 st.title("Shap Values for the Support Vector Machine")
 
@@ -16,7 +16,7 @@ st.markdown("Think of SHAP values as an unknown currency:\
              a predictor owns and how much this currency pushes to positive or to negative class. Here, the positive class refers to being GH-resistant.\
              \nSome predictors contributions correlate with other features contributions.")
 
-st.image("app/assets/shap_values.png", width=800)
+st.image("assets/shap_values.png", width=800)
 
 
 if st.button("⬅ Back"): 
