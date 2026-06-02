@@ -63,3 +63,7 @@ urllib3==2.6.3
 watchdog==6.0.0
 wcwidth==0.5.3
 zipp==3.23.0
+
+# Added compatible versions:
+catboost==1.2.2
+shap==0.42.1
