@@ -55,7 +55,8 @@ with open("assets/explainer.pkl", "rb") as f:
     explainer = pickle.load(f) # trained explainer
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1]  
-shap.plots.waterfall(shap_values_pos)
+#shap.plots.waterfall(shap_values_pos)
+print(shap_values)
 
 
 if st.button("Understand feature contribution in the whole model."): 
