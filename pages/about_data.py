@@ -1,6 +1,7 @@
 'GEN DATA PAGE'
 
 import streamlit as st
+import streamlit.components.v1 as components
 
 col1, col2 = st.columns([2, 1]) 
 with col1: 
@@ -14,7 +15,7 @@ st.markdown("The patients included in this study are a subgroup of participants 
 with open("assets/spider_plot.html", "r", encoding="utf-8") as f:
     html = f.read()
 
-st.iframe(srcdoc=html, height=500)
+components.iframe(srcdoc=html, height=500)
 st.markdown("The mean values over the groups have been normalized to be able to display them together in a radar plot due to different orignal feature scales.")
 st.markdown(
     "**This plot is interactive — hover to see values and click legend items to show or hide groups.**"
