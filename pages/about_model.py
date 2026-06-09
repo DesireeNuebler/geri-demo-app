@@ -8,14 +8,13 @@ with col1:
 with col2: 
     st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
  
-st.title("About the Model: Random Forest Model")
+st.title("The Random Forest Model")
 
 st.subheader("The Model")
 st.markdown("The trained model is a **Random Forest Model**. Assuming complex non linear relationships, models like the classical logistic regression fail to seperate the two classes." \
 "\Machine learning models overcome this restriction and handle correlated predictors gracefully. " \
-"The basic concept of a random forest model is a decision tree that tries to find a complex function to seperate the patients into GH-sensitive and GH-resistant by sequently learing decision rules.")
-st.image("assets/log_reg_illustration.jpeg", width=350)
-
+"The basic concept of a random forest model is a decision tree that tries to find a complex function to seperate the patients into GH-sensitive and GH-resistant by sequently learing decision rules. 
+This idea is repeated multiple times resulting in a model consisting a various independent trees with each one voting for a class given the input.")
 
 st.subheader("Explainability")
 st.markdown("For explainability **SHAP values** have been generated.The idea of SHAP values is to break down any machine learning model predictions and explain the contribution\
