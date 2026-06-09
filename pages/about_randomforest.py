@@ -42,11 +42,10 @@ fig_forest.add_trace(go.Scatter(
 ))
 
 fig_forest.update_layout(
-    title="Random Forest (Voting)",
+    title="Random Forest with 25 Trees (Voting)",
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
-    font=dict(family="Times New Roman"),
     xaxis=dict(visible=False),
     yaxis=dict(visible=False),
     margin=dict(l=10, r=10, t=50, b=10)
@@ -110,7 +109,6 @@ fig_tree.update_layout(
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
-    font=dict(family="Times New Roman"),
     xaxis=dict(visible=False),
     yaxis=dict(visible=False),
     margin=dict(l=10, r=10, t=50, b=10)
