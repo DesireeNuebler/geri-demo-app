@@ -1,5 +1,4 @@
-
-'INSERT SHAP PAGE'
+'GEN SHAP PAGE'
 
 import streamlit as st
 
@@ -9,7 +8,7 @@ with col1:
 with col2: 
     st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
  
-st.title("Shap Values for the Support Vector Machine")
+st.title("Shap Values for the Random Forest Model")
 
 st.markdown("Think of SHAP values as an unknown currency:\
              We cannot explicity calculate each predictors effect but we can tell how much of the currency\
