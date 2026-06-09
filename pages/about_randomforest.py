@@ -46,7 +46,7 @@ fig.add_trace(go.Scatter(
     ),
     name="Decision: Forest",
     hovertemplate=[
-        "GHD" if v == 1 else "Non-GHD" for v in votes
+        "GH-resistant" if v == 1 else "GH-sensitive" for v in votes
     ]
 ))
 
@@ -59,9 +59,9 @@ nodes = {
     "GH < 5 pmol/L?": (0.5, 1.0),
     "Low IGF-I": (0.25, 0.6),
     "High IGF-I": (0.75, 0.6),
-    "GHD": (0.2, 0.2),
-    "Non-GHD": (0.6, 0.2),
-    "GHD ": (0.85, 0.2),
+    "GH-resistant": (0.2, 0.2),
+    "GH-sensitive": (0.6, 0.2),
+    "GH-resistant" ": (0.85, 0.2),
 }
 
 edges = [
@@ -108,7 +108,7 @@ for label, (x0, y0) in nodes.items():
 # LAYOUT
 # =============================
 fig.update_layout(
-    title="Random Forest Decision Process",
+    title="Random Forest Decision Process with 25 Trees",
     title_font=dict(family="Times New Roman", size=22),
     font=dict(family="Times New Roman", size=14),
     height=550,
@@ -131,9 +131,9 @@ st.plotly_chart(fig, use_container_width=True)
 st.markdown("## Final Prediction")
 
 st.metric(
-    label="Probability of GHD",
+    label="Probability of GH-resistance",
     value=f"{ghd_votes / n_trees:.1%}"
 )
 
-st.write(f"🟢 GHD votes: {ghd_votes}")
-st.write(f"🔴 Non-GHD votes: {non_votes}")
+st.write(f"🔴 GH-resistance votes: {ghd_votes}")
+st.write(f"🟢  GH-sensitivity votes: {non_votes}")
