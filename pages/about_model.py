@@ -13,33 +13,40 @@ st.title("The Random Forest Model")
 st.subheader("The Model")
 st.markdown("The trained model is a **Random Forest Model**.Assuming complex non linear relationships, models like the classical logistic regression fail to seperate the two classes. Machine learning models overcome this restriction and handle correlated predictors gracefully. The basic concept of a random forest model is a decision tree that tries to find a complex function to seperate the patients into GH-sensitive and GH-resistant by sequently learing decision rules. This idea is repeated multiple times resulting in a model consisting a various independent trees with each one voting for a class given the input.")
 
+####
 import streamlit as st
-import plotly.graph_objects as go
 import numpy as np
+import plotly.graph_objects as go
 
-st.subheader("How the Random Forest Makes a Decision")
+st.title("Random Forest Visualization")
 
-# Example probability from your model
-ghd_probability = 0.74
+# -----------------------------
+# Simulated forest prediction
+# -----------------------------
+np.random.seed(42)
 
-# Simulate 50 trees voting
-n_trees = 50
+n_trees = 25
+ghd_probability = 0.72
+
 votes = np.random.choice(
     [1, 0],
     size=n_trees,
     p=[ghd_probability, 1 - ghd_probability]
 )
 
-# Arrange trees in a grid
-n_cols = 10
+ghd_votes = votes.sum()
+non_votes = n_trees - ghd_votes
+
+# -----------------------------
+# MINI FOREST (LEFT PANEL)
+# -----------------------------
+n_cols = 5
 x = np.tile(np.arange(n_cols), n_trees // n_cols)
 y = np.repeat(np.arange(n_trees // n_cols)[::-1], n_cols)
 
-colors = np.where(votes == 1, "#2ca02c", "#d62728")
+fig_forest = go.Figure()
 
-fig = go.Figure()
-
-fig.add_trace(
+fig_forest.add_trace(
     go.Scatter(
         x=x,
         y=y,
@@ -47,62 +54,115 @@ fig.add_trace(
         text=["🌳"] * n_trees,
         textposition="middle center",
         marker=dict(
-            size=40,
-            color=colors,
-            opacity=0.85,
+            size=45,
+            color=np.where(votes == 1, "#2ca02c", "#d62728"),
             line=dict(width=1, color="white")
         ),
-        hovertemplate=np.where(
-            votes == 1,
-            "Tree vote: GHD<extra></extra>",
-            "Tree vote: Non-GHD<extra></extra>"
-        )
+        hovertemplate=[
+            "GHD" if v == 1 else "Non-GHD" for v in votes
+        ]
     )
 )
 
-fig.update_layout(
-    title="Individual Tree Votes",
-    title_font=dict(
-        family="Times New Roman",
-        size=22
-    ),
-    font=dict(
-        family="Times New Roman",
-        size=14
-    ),
-    height=400,
-    showlegend=False,
-    xaxis=dict(
-        visible=False
-    ),
-    yaxis=dict(
-        visible=False
-    ),
-    margin=dict(l=20, r=20, t=60, b=20),
+fig_forest.update_layout(
+    title="Mini Forest Voting",
+    title_font=dict(family="Times New Roman", size=20),
+    font=dict(family="Times New Roman", size=14),
+    height=350,
+    xaxis=dict(visible=False),
+    yaxis=dict(visible=False),
     paper_bgcolor="white",
-    plot_bgcolor="white"
+    plot_bgcolor="white",
+    margin=dict(l=10, r=10, t=50, b=10)
 )
 
-st.plotly_chart(fig, use_container_width=True)
+# -----------------------------
+# SIMPLE EXAMPLE TREE (RIGHT PANEL)
+# -----------------------------
+fig_tree = go.Figure()
 
-# Vote summary
-ghd_votes = votes.sum()
-non_votes = len(votes) - ghd_votes
+# Nodes (manual layout)
+nodes = {
+    "IGF-I < 120": (0.5, 1.0),
+    "GHBP < 500": (0.25, 0.6),
+    "BMI < 30": (0.75, 0.6),
+    "GHD": (0.2, 0.2),
+    "Non-GHD": (0.6, 0.2),
+    "GHD ": (0.85, 0.2),
+}
 
-st.markdown(
-    f"""
-### Forest Vote
+edges = [
+    ("IGF-I < 120", "GHBP < 500"),
+    ("IGF-I < 120", "BMI < 30"),
+    ("GHBP < 500", "GHD"),
+    ("GHBP < 500", "Non-GHD"),
+    ("BMI < 30", "GHD "),
+]
 
-🟢 **GHD:** {ghd_votes} trees
+# Draw edges
+for parent, child in edges:
+    fig_tree.add_shape(
+        type="line",
+        x0=nodes[parent][0],
+        y0=nodes[parent][1],
+        x1=nodes[child][0],
+        y1=nodes[child][1],
+        line=dict(color="gray", width=2)
+    )
 
-🔴 **Non-GHD:** {non_votes} trees
+# Draw nodes
+for label, (x0, y0) in nodes.items():
+    color = "#1f77b4" if "<" in label else "#2ca02c" if "GHD" in label else "#d62728"
 
-### Final Prediction
+    fig_tree.add_trace(
+        go.Scatter(
+            x=[x0],
+            y=[y0],
+            mode="markers+text",
+            text=[label],
+            textposition="top center",
+            marker=dict(size=40, color=color),
+            hoverinfo="skip"
+        )
+    )
 
-**Probability of GHD: {ghd_votes / len(votes):.1%}**
-"""
+fig_tree.update_layout(
+    title="Example Decision Tree (Simplified)",
+    title_font=dict(family="Times New Roman", size=20),
+    font=dict(family="Times New Roman", size=14),
+    height=350,
+    xaxis=dict(visible=False),
+    yaxis=dict(visible=False),
+    paper_bgcolor="white",
+    plot_bgcolor="white",
+    margin=dict(l=10, r=10, t=50, b=10)
 )
 
+# -----------------------------
+# STREAMLIT LAYOUT
+# -----------------------------
+col1, col2 = st.columns(2)
+
+with col1:
+    st.plotly_chart(fig_forest, use_container_width=True)
+
+with col2:
+    st.plotly_chart(fig_tree, use_container_width=True)
+
+# -----------------------------
+# FINAL OUTPUT
+# -----------------------------
+st.markdown("## Final Prediction")
+
+st.metric(
+    label="Probability of GHD",
+    value=f"{ghd_votes / n_trees:.1%}"
+)
+
+st.write(f"🟢 GHD votes: {ghd_votes}")
+st.write(f"🔴 Non-GHD votes: {non_votes}")
+
+#####
 
 
 st.subheader("Explainability")
