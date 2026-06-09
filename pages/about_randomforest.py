@@ -7,16 +7,12 @@ st.title("Random Forest Visualization")
 np.random.seed(42)
 
 # -----------------------------
-# FOREST SIMULATION
+# DATA
 # -----------------------------
 n_trees = 25
-gh_resistance_prob = 0.33
+prob = 0.33
 
-votes = np.random.choice(
-    [1, 0],
-    size=n_trees,
-    p=[gh_resistance_prob, 1 - gh_resistance_prob]
-)
+votes = np.random.choice([1, 0], size=n_trees, p=[prob, 1 - prob])
 
 resistant_votes = votes.sum()
 sensitive_votes = n_trees - resistant_votes
@@ -24,10 +20,10 @@ sensitive_votes = n_trees - resistant_votes
 fig = go.Figure()
 
 # =============================
-# 🌳 LEFT: MINI FOREST
+# 🌳 LEFT: FOREST (STRICT RANGE 0–0.9)
 # =============================
 n_cols = 5
-x_forest = np.tile(np.arange(n_cols), n_trees // n_cols)
+x_forest = np.tile(np.arange(n_cols), n_trees // n_cols) / n_cols * 0.9
 y_forest = np.repeat(np.arange(n_trees // n_cols)[::-1], n_cols)
 
 fig.add_trace(go.Scatter(
@@ -47,17 +43,17 @@ fig.add_trace(go.Scatter(
 ))
 
 # =============================
-# 🌲 RIGHT: EXAMPLE TREE (SHIFTED)
+# 🌲 RIGHT: TREE (STRICT RANGE 1.1–2.0)
 # =============================
-shift_x = 1.6  # pushes tree to the right
+shift = 1.3
 
 nodes = {
-    "GH < threshold?": (shift_x + 0.5, 1.0),
-    "Low IGF-I": (shift_x + 0.25, 0.6),
-    "High IGF-I": (shift_x + 0.75, 0.6),
-    "Resistant": (shift_x + 0.2, 0.2),
-    "Sensitive": (shift_x + 0.6, 0.2),
-    "Resistant (alt)": (shift_x + 0.85, 0.2),
+    "GH < threshold?": (shift + 0.5, 1.0),
+    "Low IGF-I": (shift + 0.25, 0.6),
+    "High IGF-I": (shift + 0.75, 0.6),
+    "Resistant": (shift + 0.2, 0.2),
+    "Sensitive": (shift + 0.6, 0.2),
+    "Resistant alt": (shift + 0.85, 0.2),
 }
 
 edges = [
@@ -65,22 +61,22 @@ edges = [
     ("GH < threshold?", "High IGF-I"),
     ("Low IGF-I", "Resistant"),
     ("Low IGF-I", "Sensitive"),
-    ("High IGF-I", "Resistant (alt)"),
+    ("High IGF-I", "Resistant alt"),
 ]
 
-# Draw tree edges
-for parent, child in edges:
+# draw edges
+for p, c in edges:
     fig.add_shape(
         type="line",
-        x0=nodes[parent][0],
-        y0=nodes[parent][1],
-        x1=nodes[child][0],
-        y1=nodes[child][1],
+        x0=nodes[p][0],
+        y0=nodes[p][1],
+        x1=nodes[c][0],
+        y1=nodes[c][1],
         line=dict(color="gray", width=2)
     )
 
-# Draw tree nodes
-for label, (x0, y0) in nodes.items():
+# draw nodes
+for label, (x, y) in nodes.items():
     if "GH" in label:
         color = "#1f77b4"
     elif "Resistant" in label:
@@ -89,44 +85,43 @@ for label, (x0, y0) in nodes.items():
         color = "#2ca02c"
 
     fig.add_trace(go.Scatter(
-        x=[x0],
-        y=[y0],
+        x=[x],
+        y=[y],
         mode="markers+text",
         text=[label],
         textposition="top center",
         marker=dict(size=40, color=color),
-        name="Decision: Example Tree",
         showlegend=False,
         hoverinfo="skip"
     ))
 
-# -----------------------------
-# LAYOUT (IMPORTANT PART)
-# -----------------------------
+# =============================
+# LAYOUT (CRITICAL)
+# =============================
 fig.update_layout(
-    title="Random Forest (Left) + Example Decision Tree (Right)",
-    title_font=dict(family="Times New Roman", size=22),
-    font=dict(family="Times New Roman", size=14),
+    title="Random Forest (Left) vs Decision Tree (Right)",
     height=600,
     paper_bgcolor="white",
     plot_bgcolor="white",
-    margin=dict(l=20, r=20, t=60, b=20),
+    font=dict(family="Times New Roman", size=14),
 
-    # KEY: expand x-axis to fit both panels
-    xaxis=dict(visible=False, range=[-0.5, 3]),
-    yaxis=dict(visible=False, range=[-0.2, 1.2])
+    # KEY FIX: hard separation
+    xaxis=dict(visible=False, range=[0, 2.2]),
+    yaxis=dict(visible=False, range=[-0.2, 1.2]),
+
+    margin=dict(l=10, r=10, t=60, b=10)
 )
 
 st.plotly_chart(fig, use_container_width=True)
 
-# -----------------------------
+# =============================
 # OUTPUT
-# -----------------------------
+# =============================
 st.markdown("## Final Prediction")
 
 st.metric(
-    label="Probability of GH-resistance",
-    value=f"{resistant_votes / n_trees:.1%}"
+    "Probability of GH-resistance",
+    f"{resistant_votes / n_trees:.1%}"
 )
 
 st.write(f"🔴 GH-resistant votes: {resistant_votes}")
