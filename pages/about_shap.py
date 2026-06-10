@@ -96,7 +96,7 @@ shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
 st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value.\
-The values of GH, IGF-1, Cortisol and HOMA have been logarithmized.")
+The values of GH, IGF-1, Cortisol and HOMA have been logarithmized.  The expected SHAP value equals the expected explaination of the average patient. Therefore, the SHAP values of the average person do only slightly differ from the expected value (E[X] = 0.33).")
 
 
 
