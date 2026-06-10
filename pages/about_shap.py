@@ -61,7 +61,11 @@ with open("assets/explainer.pkl", "rb") as f:
 
 X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
 shap_values = explainer(X_scaled)
-print(shap_values)
+shap_values_pos = shap_values[:, :, 1] 
+shap.plots.waterfall(shap_values_pos)
+print(explainer.expected_value)
+print(explainer.data.shape if hasattr(explainer, "data") else "no background data")
+
 
 if st.button("Understand feature contribution in the whole model."): 
     st.switch_page("pages/about_shap_gen.py")
