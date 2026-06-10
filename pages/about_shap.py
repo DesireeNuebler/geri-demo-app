@@ -5,6 +5,7 @@ import pickle
 import numpy as np
 import shap
 import pandas as pd
+import matplotlib.pyplot as plt
 
 col1, col2 = st.columns([2, 1]) 
 with col1: 
@@ -62,8 +63,10 @@ with open("assets/explainer.pkl", "rb") as f:
 X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1] 
-shap.plots.waterfall(shap_values_pos[0])
-print(type(shap_values))
+
+plt.clf()  # clear previous figures
+fig = shap.plots.waterfall(shap_values_pos[0], show=False)
+st.pyplot(fig)
 
 
 if st.button("Understand feature contribution in the whole model."): 
