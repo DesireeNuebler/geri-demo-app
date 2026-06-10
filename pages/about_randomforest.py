@@ -6,14 +6,14 @@ st.title("Random Forest Visualization")
 np.random.seed(42)
 
 n_trees = 25
-prob = 0.33
+prob = 0.33 # probability for GH-resistance
 
 votes = np.random.choice([1, 0], size=n_trees, p=[prob, 1 - prob])
 resistant_votes = votes.sum()
 sensitive_votes = n_trees - resistant_votes
 
 
-# FIGURE 1: FOREST
+# FIGURE 1: FOREST --------
 
 fig_forest = go.Figure()
 
@@ -48,7 +48,7 @@ fig_forest.update_layout(
 )
 
 
-# FIGURE 2: DECISION TREE
+# FIGURE 2: DECISION TREE ----------
 
 fig_tree = go.Figure()
 
@@ -117,7 +117,7 @@ with col1:
 with col2:
     st.plotly_chart(fig_tree, use_container_width=True)
 
-# OUTPUT
+# OUTPUT ------
 st.markdown("## Final Prediction")
 st.metric(
     "Probability of GH-resistance",
@@ -125,5 +125,7 @@ st.metric(
 )
 
 st.write(f"🔴 GH-resistant votes: {resistant_votes}")
-st.write(f"🟢 GH-sensitive votes: {sensitive_votes}")
+st.write(f"🟢 GH-sensitive votes: {sensitive_votes}") 
+
+st.info("The decision rules are exemplary and do not match with the real trained model.", width=210)
 
