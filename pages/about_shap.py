@@ -13,41 +13,41 @@ with col1:
 with col2: 
     st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
 
-st.title("Feature Contribution for the Patients Prediction")
+st.title("Feature Contribution for the Patient Prediction")
 
 
-# age = st.session_state["age"] 
-# sex = st.session_state["sex"] 
-# igf1 = st.session_state["igf1"] 
-# cortisol = st.session_state["cortisol"]
-# t3 = st.session_state["t3"] 
-# homa = st.session_state["homa"] 
-# gh = st.session_state["gh"] 
-# hghbp = st.session_state["hghbp"] 
-# insulin = st.session_state["insulin"] 
-# bmi = st.session_state["bmi"] 
+age = st.session_state["age"] 
+sex = st.session_state["sex"] 
+igf1 = st.session_state["igf1"] 
+cortisol = st.session_state["cortisol"]
+t3 = st.session_state["t3"] 
+homa = st.session_state["homa"] 
+gh = st.session_state["gh"] 
+hghbp = st.session_state["hghbp"] 
+insulin = st.session_state["insulin"] 
+bmi = st.session_state["bmi"] 
 
-# st.markdown("### Patient Characteristics")
-# cols = st.columns(2)
+st.markdown("### Patient Characteristics")
+cols = st.columns(2)
 
-# items = [
-#     ("Age", age),
-#     ("Sex", sex),
-#     ("IGF‑1", igf1),
-#     ("Cortisol", cortisol),
-#     ("T3", t3),
-#     ("HOMA", homa),
-#     ("GH", gh),
-#     ("hGHBP", hghbp),
-#     ("Insulin", insulin),
-#     ("BMI", bmi)
-# ]
+items = [
+    ("Age", age),
+    ("Sex", sex),
+    ("IGF‑1", igf1),
+    ("Cortisol", cortisol),
+    ("T3", t3),
+    ("HOMA", homa),
+    ("GH", gh),
+    ("hGHBP", hghbp),
+    ("Insulin", insulin),
+    ("BMI", bmi)
+]
 
-# for i, (name, value) in enumerate(items):
-#     with cols[i % 2]:
-#         st.metric(label=name, value=value)
+for i, (name, value) in enumerate(items):
+    with cols[i % 2]:
+        st.metric(label=name, value=value)
 
-# female =  1 if sex == "Female" else 0
+female =  1 if sex == "Female" else 0
 
 # X = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 # skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
