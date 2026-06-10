@@ -56,10 +56,23 @@ st.title("Feature Contribution for the Patients Prediction")
 with open("assets/explainer.pkl", "rb") as f: 
     explainer = pickle.load(f) # trained explainer
 
-X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
-shap_values = explainer(X_scaled.rename([[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]]))
+
+
+columns = [
+    "female", "bmi", "insulin", "ghbp", "homa",
+    "gh", "t3", "cortisol", "igf1", "age"
+]
+
+X_scaled = pd.DataFrame(
+    [[0,2,1,1,1,1,3,3,2,2]],  #exemplary
+    columns=columns
+)
+
+shap_values = explainer(X_scaled)
+
 shap_values_pos = shap_values[:, :, 1] 
 fig, ax = plt.subplots()
+ax.patches[0].set_visible(False
 shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
