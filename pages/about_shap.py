@@ -59,7 +59,7 @@ with open("assets/explainer.pkl", "rb") as f:
 #shap.plots.waterfall(shap_values_pos)
  # print(shap_values)
 
-X_scaled = pd.Dataframe(np.array([[0,2,1,1,1,1,3,3,2,2]]))  # example only
+X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
 shap_values = explainer(X_scaled)
 print(shap_values)
 
