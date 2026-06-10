@@ -138,4 +138,4 @@ if st.button("⬅ Back to Start."):
     st.switch_page("main.py")
 
 if st.button("Go to prediction."): 
-    st.switch_page("pages/predict.py")
+    st.switch_page("pages/input.py")
