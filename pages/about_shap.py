@@ -56,8 +56,6 @@ female =  1 if sex == "Female" else 0
 with open("assets/explainer.pkl", "rb") as f: 
     explainer = pickle.load(f) # trained explainer
 
-
-
 columns = [
     "female", "bmi", "insulin", "ghbp", "homa",
     "gh", "t3", "cortisol", "igf1", "age"
@@ -88,6 +86,7 @@ shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1] 
 fig, ax = plt.subplots()
 ax.set_title("")
+ax.set_xlabel("")
 shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
