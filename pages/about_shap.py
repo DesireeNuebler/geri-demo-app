@@ -72,7 +72,6 @@ shap_values = explainer(X_scaled)
 
 shap_values_pos = shap_values[:, :, 1] 
 fig, ax = plt.subplots()
-ax.patches[0].set_visible(False)
 shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
