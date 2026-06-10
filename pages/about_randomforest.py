@@ -130,5 +130,6 @@ with col1:
     st.write(f"🟢 GH-sensitive votes: {sensitive_votes}") 
 
 with col2:
-    st.info("\n\n\n\nThe decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees.", width=400)
+    st.write("\n\n\n\n")
+    st.info("he decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees.", width=400)
 
