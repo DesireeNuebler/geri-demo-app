@@ -95,8 +95,7 @@ fig, ax = plt.subplots()
 shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
-st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value.\ The values of GH, IGF-1, Cortisol and HOMA have been logarithmized.")
-
+st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value. \The values of GH, IGF-1, Cortisol and HOMA have been logarithmized.")
 
 
 
