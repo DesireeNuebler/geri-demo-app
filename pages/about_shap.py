@@ -97,6 +97,7 @@ st.pyplot(fig)
 
 st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value.\nThe values of GH, IGF-1, Cortisol and HOMA have been logarithmized.\nThe expected SHAP value equals the expected explaination of the average patient. Therefore, the SHAP values of the average person do only slightly differ from the expected value (E[X] = 0.33).")
 
+st.info("First line<br>Second line<br><b>Bold third line</b>", unsafe_allow_html=True)
 
 
 
