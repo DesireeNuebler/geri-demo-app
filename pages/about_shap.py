@@ -80,15 +80,18 @@ X_scaled = pd.DataFrame(
 )
 
 X_scaled = X_scaled.rename(columns=labels)
-
 shap_values = explainer(X_scaled)
+shap_values_pos = shap_values[:, :, 1]
 
-shap_values_pos = shap_values[:, :, 1] 
-fig, ax = plt.subplots()
-shap.plots.waterfall(shap_values_pos[0], show=False)
-st.pyplot(fig)
+col1, col2 = st.columns([2, 1]) 
+with col1: 
+    fig, ax = plt.subplots()
+    shap.plots.waterfall(shap_values_pos[0], show=False)
+    st.pyplot(fig)
+with col2: 
+    st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value.")
 
-st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the value.")
+
 
 
 if st.button("Understand feature contribution in the whole model."): 
