@@ -33,7 +33,7 @@ if has_igf1_deficient == "Please select...":
         st.warning("No choice has been made.", width=210)
 
 
-elif has_igf1_deficient is not "Yes":
+elif has_igf1_deficient != "Yes":
     st.switch_page("pages/screening_exit.py")
 
 else:
