@@ -62,8 +62,8 @@ nodes = {
 }
 
 edges = [
-    ("GH < 400 pmol/L?", "Low IGF-I"),
-    ("GH < 400 pmol/L?", "High IGF-I"),
+    ("GH < threshold?", "Low IGF-I"),
+    ("GH < threshold?", "High IGF-I"),
     ("Low IGF-I", "Resistant"),
     ("Low IGF-I", "Sensitive"),
     ("High IGF-I", "Resistant alt"),
