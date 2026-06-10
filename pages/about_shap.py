@@ -63,6 +63,7 @@ X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1] 
 shap.plots.waterfall(shap_values_pos[0])
+print(type(shap_values))
 
 
 if st.button("Understand feature contribution in the whole model."): 
