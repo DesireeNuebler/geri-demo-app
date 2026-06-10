@@ -53,7 +53,7 @@ skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
 insulin =  np.log1p(insulin)
 gh = np.log1p(gh)
 cortisol = np.log1p(cortisol)
-igfi = np.log1p(igfi)
+igf1 = np.log1p(igf1)
 homa = np.log1p(homa)
 
 
