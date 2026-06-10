@@ -78,8 +78,10 @@ labels = {"female": "Gender (female)",
 
 X_scaled = pd.DataFrame(
     [[0,2,1,1,1,1,3,3,2,2]],  #exemplary
-    columns=labels
+    columns=columns
 )
+
+X_scaled = X_scaled.rename(columns=labels)
 
 shap_values = explainer(X_scaled)
 
