@@ -5,20 +5,16 @@ import plotly.graph_objects as go
 st.title("Random Forest Visualization")
 np.random.seed(42)
 
-# -----------------------------
-# DATA
-# -----------------------------
 n_trees = 25
 prob = 0.33
 
 votes = np.random.choice([1, 0], size=n_trees, p=[prob, 1 - prob])
-
 resistant_votes = votes.sum()
 sensitive_votes = n_trees - resistant_votes
 
-# =========================================================
-# 🌳 FIGURE 1: FOREST
-# =========================================================
+
+# FIGURE 1: FOREST
+
 fig_forest = go.Figure()
 
 n_cols = 5
@@ -42,7 +38,7 @@ fig_forest.add_trace(go.Scatter(
 ))
 
 fig_forest.update_layout(
-    title="Random Forest with 25 Trees (Voting)",
+    title="Random Forest with 25 Trees, each voting for GH-sensitive or -resistant",
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
@@ -51,9 +47,9 @@ fig_forest.update_layout(
     margin=dict(l=10, r=10, t=50, b=10)
 )
 
-# =========================================================
-# 🌲 FIGURE 2: DECISION TREE
-# =========================================================
+
+# FIGURE 2: DECISION TREE
+
 fig_tree = go.Figure()
 
 nodes = {
@@ -66,8 +62,8 @@ nodes = {
 }
 
 edges = [
-    ("GH < threshold?", "Low IGF-I"),
-    ("GH < threshold?", "High IGF-I"),
+    ("GH < 400 pmol/L?", "Low IGF-I"),
+    ("GH < 400 pmol/L?", "High IGF-I"),
     ("Low IGF-I", "Resistant"),
     ("Low IGF-I", "Sensitive"),
     ("High IGF-I", "Resistant alt"),
@@ -105,7 +101,7 @@ for label, (x, y) in nodes.items():
     ))
 
 fig_tree.update_layout(
-    title="Example Decision Tree",
+    title="Example Tree",
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
@@ -114,22 +110,15 @@ fig_tree.update_layout(
     margin=dict(l=10, r=10, t=50, b=10)
 )
 
-# =========================================================
-# STREAMLIT LAYOUT (NOW WORKS CORRECTLY)
-# =========================================================
-col1, col2 = st.columns(2)
 
+col1, col2 = st.columns(2)
 with col1:
     st.plotly_chart(fig_forest, use_container_width=True)
-
 with col2:
     st.plotly_chart(fig_tree, use_container_width=True)
 
-# =========================================================
 # OUTPUT
-# =========================================================
 st.markdown("## Final Prediction")
-
 st.metric(
     "Probability of GH-resistance",
     f"{resistant_votes / n_trees:.1%}"
@@ -137,3 +126,4 @@ st.metric(
 
 st.write(f"🔴 GH-resistant votes: {resistant_votes}")
 st.write(f"🟢 GH-sensitive votes: {sensitive_votes}")
+
