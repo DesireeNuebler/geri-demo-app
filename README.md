@@ -17,3 +17,7 @@ For more technical or methodical background, please refer to the research paper.
 
 ## Live Demo
 The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). 
+
+## Contact
+For any concern regarding the application or code please get in touch via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de)
+
