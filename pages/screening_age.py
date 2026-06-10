@@ -26,7 +26,7 @@ if is_older_than_74 == "Please select...":
         st.warning("No choice has been made.", width=210)
 
 
-elif is_older_than_74 is not "Yes":
+elif is_older_than_74 != "Yes":
     st.switch_page("pages/screening_exit.py")
 
 else:
