@@ -53,7 +53,7 @@ fig_forest.update_layout(
 fig_tree = go.Figure()
 
 nodes = {
-    "GH < threshold?": (0.5, 1.0),
+    "GH < 400 pmol/L?": (0.5, 1.0),
     "Low IGF-I": (0.25, 0.6),
     "High IGF-I": (0.75, 0.6),
     "Resistant": (0.2, 0.2),
