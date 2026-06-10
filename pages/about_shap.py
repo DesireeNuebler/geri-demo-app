@@ -63,9 +63,22 @@ columns = [
     "gh", "t3", "cortisol", "igf1", "age"
 ]
 
+labels = {"female": "Gender (female)",
+    "age": "Age (years)",
+    "bmi": "BMI  (kg/m²)",
+    "igfi": "Baseline IGF-I (ng/ml)",
+    "gh": "GH  (pmol/L)",
+    "hghbp": "GHBP (pmol/L)",
+    "homa": "HOMA",
+    "insulin": "Insulin (µU/ml)",
+    "cortisol": "Cortisol (µg/dl)",
+    "t3": "T3 (ng/dl)"
+}
+
+
 X_scaled = pd.DataFrame(
     [[0,2,1,1,1,1,3,3,2,2]],  #exemplary
-    columns=columns
+    columns=labels
 )
 
 shap_values = explainer(X_scaled)
