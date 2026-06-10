@@ -58,16 +58,16 @@ skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
 insulin =  np.log1p(insulin)
 gh = np.log1p(gh)
 cortisol = np.log1p(cortisol)
-igf1 = np.log1p(igf1)
+igfi = np.log1p(igf1)
 homa = np.log1p(homa)
 
 original_cols = [
     "female", "bmi", "insulin", "hghbp", "homa",
-    "gh", "t3", "cortisol", "igf1", "age"
+    "gh", "t3", "cortisol", "igfi", "age"
 ]
 
 X_scaled = pd.DataFrame(
-    [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol, igf1, age]],
+    [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol, igfi, age]],
     columns=original_cols
 )
 
