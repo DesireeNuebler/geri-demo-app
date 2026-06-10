@@ -11,7 +11,7 @@ with col2:
 st.title("The Random Forest Model")
 
 st.subheader("The Model")
-# st.markdown("The trained model is a **Random Forest Model**.Assuming complex non linear relationships, models like the classical logistic regression fail to seperate the two classes. Machine learning models overcome this restriction and handle correlated predictors gracefully. The basic concept of a random forest model is a decision tree that tries to find a complex function to seperate the patients into GH-sensitive and GH-resistant by sequently learing decision rules. This idea is repeated multiple times resulting in a model consisting a various independent trees with each one voting for a class given the input.")
+st.markdown("The trained model is a **Random Forest Model**. Assuming complex non linear relationships, models like the classical logistic regression fail to seperate the two classes. Machine learning models overcome this restriction and handle correlated predictors gracefully. The basic concept of a random forest model is a decision tree that tries to find a complex function to seperate the patients into GH-sensitive and GH-resistant by sequently learing decision rules. This idea is repeated multiple times resulting in a model consisting a various independent trees with each one voting for a class given the input.")
 
 # if st.button("Visualize the Random Forest Idea.")
 #     st.switch_page("pages/about_randomforest.py")
