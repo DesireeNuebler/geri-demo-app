@@ -62,8 +62,8 @@ nodes = {
 }
 
 edges = [
-    ("GH < 400 pmol/L?", "Low IGF-I"),
-    ("GH < 400 pmol/L?", "High IGF-I"),
+    ("GH < 400 pmol/L?", "HOMA < 1.5?"),
+    ("GH < 400 pmol/L?", "HOMA > 1.5?"),
     ("HOMA < 1.5?", "Resistant"),
     ("HOMA < 1.5?", "Sensitive"),
     ("HOMA > 1.5?", "Resistant "),
