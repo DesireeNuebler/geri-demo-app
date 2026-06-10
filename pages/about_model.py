@@ -17,7 +17,7 @@ st.markdown("The trained model is a **Random Forest Model**. Assuming complex no
 #     st.switch_page("pages/about_randomforest.py")
 
 st.subheader("Explainability")
-st.markdown("For explainability **SHAP values** have been generated.The idea of SHAP values is to break down any machine learning model predictions and explain the contribution of each feature. Coming from game theory, each feature is allocated an importance value for a specific prediction, showing how much that feature pushed the result away from the average prediction. SHAP values of the trained model enable insights to the learned model structure, the SHAP value of a single prediction allows a deeper understanding of specific patient characteristics with respect to the learned model behaviour.")
+st.markdown("For explainability **SHAP values** have been generated. The idea of SHAP values is to break down any machine learning model predictions and explain the contribution of each feature. Coming from game theory, each feature is allocated an importance value for a specific prediction, showing how much that feature pushed the result away from the average prediction. SHAP values of the trained model enable insights to the learned model structure, the SHAP value of a single prediction allows a deeper understanding how the model reacts to a specific patient profile.")
 
 
 if st.button("Understand SHAP values of the trained model."): 
