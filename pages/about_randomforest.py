@@ -133,3 +133,9 @@ with col2:
     st.write("\n\n\n\n\n\n\n\n\n\n\n\n")
     st.info("The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees. In each tree the concrete patient values lead to certain decisions and a vote for GH-resistant or GH-sensitive.", width=400)
 
+
+if st.button("⬅ Back to Start."): 
+    st.switch_page("main.py")
+
+if st.button("Go to prediction."): 
+    st.switch_page("pages/predict.py")

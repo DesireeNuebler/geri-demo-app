@@ -112,5 +112,5 @@ if st.button("⮕ Predict resistance for the patient given values."):
     st.session_state["bmi"] = bmi
     st.switch_page("pages/predict.py")
 
-if st.button("⬅ Back"): 
+if st.button("⬅ Back to Start."): 
     st.switch_page("main.py")

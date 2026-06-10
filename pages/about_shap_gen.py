@@ -18,7 +18,7 @@ st.markdown("Think of SHAP values as an unknown currency:\
 st.image("assets/shap_values.png", width=800)
 
 
-if st.button("⬅ Back"): 
+if st.button("⬅ Back to Start."): 
     st.switch_page("main.py")
 
 if st.button("Go to prediction."): 

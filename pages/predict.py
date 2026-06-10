@@ -86,11 +86,11 @@ st.markdown(
 st.info("The predicted probability serves as a risk estimate and lies between 0.2 and 0.6. Given a decision in favor of GH-resistance for predicted probabilities > 0.49 resulted in 1 out of 3 correctly detected GH-resistant patients in model testing procedure.")
 
 if st.button("Understand the feature contributions to the prediction."): 
-    st.switch_page("pages/about_shap_patient.py")
+    st.switch_page("pages/about_shap.py")
 
 
 if st.button("⬅ Back to patient input."): 
     st.switch_page("pages/input.py")
 
-if st.button("⬅ Back"):
+if st.button("⬅ Back to Start."):
         st.switch_page("main.py")
