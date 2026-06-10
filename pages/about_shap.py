@@ -64,14 +64,14 @@ X_scaled = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # o
 
 labels = {"female": "Gender (female)",
     "bmi": "BMI  (kg/m²)",
-    "age": "Age (years)",
     "insulin": "Insulin (µU/ml)",
     "hghbp": "GHBP (pmol/L)",
     "homa": "HOMA",
     "gh": "GH  (pmol/L)",
     "t3": "T3 (ng/dl)",
     "cortisol": "Cortisol (µg/dl)",
-    "igf1": "Baseline IGF-I (ng/ml)"
+    "igf1": "Baseline IGF-I (ng/ml)",
+    "age": "Age (years)"
 }
 
 
