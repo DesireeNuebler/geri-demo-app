@@ -54,8 +54,8 @@ fig_tree = go.Figure()
 
 nodes = {
     "GH < 400 pmol/L?": (0.5, 1.0),
-    "Low IGF-I": (0.25, 0.6),
-    "High IGF-I": (0.75, 0.6),
+    "HOMA < 1.5?": (0.25, 0.6),
+    "HOMA > 1.5?": (0.75, 0.6),
     "Resistant": (0.2, 0.2),
     "Sensitive": (0.6, 0.2),
     "Resistant ": (0.85, 0.2),
@@ -64,9 +64,9 @@ nodes = {
 edges = [
     ("GH < 400 pmol/L?", "Low IGF-I"),
     ("GH < 400 pmol/L?", "High IGF-I"),
-    ("Low IGF-I", "Resistant"),
-    ("Low IGF-I", "Sensitive"),
-    ("High IGF-I", "Resistant "),
+    ("HOMA < 1.5?", "Resistant"),
+    ("HOMA < 1.5?", "Sensitive"),
+    ("HOMA > 1.5?", "Resistant "),
 ]
 
 # edges
@@ -131,5 +131,5 @@ with col1:
 
 with col2:
     st.write("\n\n\n\n\n\n\n\n\n\n\n\n")
-    st.info("The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees.", width=400)
+    st.info("The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees. In each tree the concrete patient values lead to certain decisions and a vote for GH-resistant or GH-sensitive.", width=400)
 
