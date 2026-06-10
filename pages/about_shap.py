@@ -62,6 +62,12 @@ homa = np.log1p(homa)
 
 X_scaled = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 
+original_cols = [
+    "female", "bmi", "insulin", "hghbp", "homa",
+    "gh", "t3", "cortisol", "igf1", "age"
+]
+
+
 labels = {"female": "Gender (female)",
     "bmi": "BMI  (kg/m²)",
     "insulin": "Insulin (µU/ml)",
@@ -75,7 +81,7 @@ labels = {"female": "Gender (female)",
 }
 
 
-X_scaled = pd.DataFrame(X_scaled)
+X_scaled = pd.DataFrame(X_scaled, colums=original_cols)
 X_scaled = X_scaled.rename(columns=labels)
 
 with open("assets/explainer.pkl", "rb") as f: 
