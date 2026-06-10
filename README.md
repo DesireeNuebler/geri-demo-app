@@ -20,4 +20,4 @@ The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.st
 
 ## Contact
 For any concern regarding the application or code please get in touch via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de)
-
+.
