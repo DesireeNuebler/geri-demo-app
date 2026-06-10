@@ -58,7 +58,7 @@ nodes = {
     "High IGF-I": (0.75, 0.6),
     "Resistant": (0.2, 0.2),
     "Sensitive": (0.6, 0.2),
-    "Resistant alt": (0.85, 0.2),
+    "Resistant ": (0.85, 0.2),
 }
 
 edges = [
