@@ -3,6 +3,7 @@
 import streamlit as st
 import pickle
 import numpy as np
+import pandas as pd
 
 col1, col2 = st.columns([2, 1]) 
 with col1: 
@@ -51,7 +52,7 @@ for i, (name, value) in enumerate(items):
 female =  1 if sex == "Female" else 0
 
 
-expert_features = ["female", "bmi", "insulin", "hghbp", "homa", "gh", "t3", "cortisol","igfi", "age"] # order in training
+expert_features = ["female", "bmi", "insulin", "hghbp", "homa", "gh", "t3", "cortisol","igf1", "age"] # order in training
 skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
 
 insulin =  np.log1p(insulin)
