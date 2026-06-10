@@ -4,6 +4,7 @@ import streamlit as st
 import pickle
 import numpy as np
 import shap
+import pandas as pd
 
 col1, col2 = st.columns([2, 1]) 
 with col1: 
@@ -58,7 +59,7 @@ with open("assets/explainer.pkl", "rb") as f:
 #shap.plots.waterfall(shap_values_pos)
  # print(shap_values)
 
-X_scaled = np.array([[0,2,1,1,1,1,3,3,2,2]])  # example only
+X_scaled = pd.Dataframe(np.array([[0,2,1,1,1,1,3,3,2,2]]))  # example only
 shap_values = explainer(X_scaled)
 print(shap_values)
 
