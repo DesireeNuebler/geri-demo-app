@@ -101,7 +101,7 @@ for label, (x, y) in nodes.items():
     ))
 
 fig_tree.update_layout(
-    title="Example Tree",
+    title="Example Tree 🌳",
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
@@ -130,5 +130,5 @@ with col1:
     st.write(f"🟢 GH-sensitive votes: {sensitive_votes}") 
 
 with col2:
-    st.info("The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees", width=210)
+    st.info("\\The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees", width=210)
 
