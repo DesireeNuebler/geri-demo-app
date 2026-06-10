@@ -62,10 +62,10 @@ homa = np.log1p(homa)
 
 # X_scaled = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 
-# original_cols = [
-#     "female", "bmi", "insulin", "hghbp", "homa",
-#     "gh", "t3", "cortisol", "igf1", "age"
-# ]
+original_cols = [
+    "female", "bmi", "insulin", "hghbp", "homa",
+    "gh", "t3", "cortisol", "igf1", "age"
+]
 
 X_scaled = pd.DataFrame(
     [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol, igf1, age]],
