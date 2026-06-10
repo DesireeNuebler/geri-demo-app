@@ -75,7 +75,8 @@ labels = {"female": "Gender (female)",
 }
 
 
-X_scaled = pd.DataFrame(X_scaled, columns=labels)
+X_scaled = pd.DataFrame(X_scaled)
+X_scaled = X_scaled.rename(columns=labels)
 
 with open("assets/explainer.pkl", "rb") as f: 
     explainer = pickle.load(f) # trained explainer
