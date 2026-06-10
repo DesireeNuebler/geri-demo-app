@@ -38,7 +38,7 @@ items = [
     ("T3", t3),
     ("HOMA", homa),
     ("GH", gh),
-    ("hGHBP", hghbp),
+    ("GHBP", ghbp),
     ("Insulin", insulin),
     ("BMI", bmi)
 ]
@@ -64,9 +64,9 @@ columns = [
 labels = {"female": "Gender (female)",
     "age": "Age (years)",
     "bmi": "BMI  (kg/m²)",
-    "igfi": "Baseline IGF-I (ng/ml)",
+    "igf1": "Baseline IGF-I (ng/ml)",
     "gh": "GH  (pmol/L)",
-    "hghbp": "GHBP (pmol/L)",
+    "ghbp": "GHBP (pmol/L)",
     "homa": "HOMA",
     "insulin": "Insulin (µU/ml)",
     "cortisol": "Cortisol (µg/dl)",
@@ -90,6 +90,7 @@ with col1:
     st.pyplot(fig)
 with col2: 
     st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the concrete predictor value.")
+
 
 
 
