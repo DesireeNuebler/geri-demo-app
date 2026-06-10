@@ -38,7 +38,7 @@ fig_forest.add_trace(go.Scatter(
 ))
 
 fig_forest.update_layout(
-    title="Random Forest with 25 Trees, each voting for GH-sensitive or -resistant",
+    title="Random Forest with 25 Trees",
     height=500,
     paper_bgcolor="white",
     plot_bgcolor="white",
@@ -66,7 +66,7 @@ edges = [
     ("GH < threshold?", "High IGF-I"),
     ("Low IGF-I", "Resistant"),
     ("Low IGF-I", "Sensitive"),
-    ("High IGF-I", "Resistant alt"),
+    ("High IGF-I", "Resistant "),
 ]
 
 # edges
@@ -118,14 +118,17 @@ with col2:
     st.plotly_chart(fig_tree, use_container_width=True)
 
 # OUTPUT ------
-st.markdown("## Final Prediction")
-st.metric(
-    "Probability of GH-resistance",
-    f"{resistant_votes / n_trees:.1%}"
-)
+col1, col2 = st.columns(2)
+with col1:
+    st.markdown("## Final Prediction")
+    st.metric(
+        "Probability of GH-resistance",
+        f"{resistant_votes / n_trees:.1%}"
+    )
+    
+    st.write(f"🔴 GH-resistant votes: {resistant_votes}")
+    st.write(f"🟢 GH-sensitive votes: {sensitive_votes}") 
 
-st.write(f"🔴 GH-resistant votes: {resistant_votes}")
-st.write(f"🟢 GH-sensitive votes: {sensitive_votes}") 
-
-st.info("The decision rules are exemplary and do not match with the real trained model.", width=210)
+with col2:
+    st.info("The decision rules are illustrative and do not match with the real trained model. The developed model combines 250 trees", width=210)
 
