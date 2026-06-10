@@ -63,15 +63,15 @@ homa = np.log1p(homa)
 X_scaled = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 
 labels = {"female": "Gender (female)",
-    "age": "Age (years)",
     "bmi": "BMI  (kg/m²)",
-    "igf1": "Baseline IGF-I (ng/ml)",
-    "gh": "GH  (pmol/L)",
+    "age": "Age (years)",
+    "insulin": "Insulin (µU/ml)",
     "hghbp": "GHBP (pmol/L)",
     "homa": "HOMA",
-    "insulin": "Insulin (µU/ml)",
+    "gh": "GH  (pmol/L)",
+    "t3": "T3 (ng/dl)",
     "cortisol": "Cortisol (µg/dl)",
-    "t3": "T3 (ng/dl)"
+    "igf1": "Baseline IGF-I (ng/ml)"
 }
 
 
