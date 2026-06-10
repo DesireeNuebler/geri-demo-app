@@ -32,7 +32,7 @@ homa = st.number_input(
 min_value=1.0,
 max_value=8.0, # average
 value=2.4,     
-step=0.1
+step=0.05
 )
 
 
@@ -41,7 +41,7 @@ insulin = st.number_input(
 min_value=2.0,
 max_value=25.0, # average
 value=9.0,     
-step=0.1
+step=0.05
 )
 
 
@@ -49,8 +49,8 @@ hghbp = st.number_input(
 "Enter HGHBP",
 min_value=100.0,
 max_value=700.0, # default: average
-value=602.5,     
-step=0.1
+value=605.01,     
+step=0.05
 )
 
 
@@ -60,7 +60,7 @@ gh = st.number_input(
 min_value=0.0,
 max_value=15.0, # average
 value=1.4,     
-step=0.1
+step=0.05
 )
 
 
@@ -69,7 +69,7 @@ t3 = st.number_input(
 min_value=0.0,
 max_value=7.0, # average
 value=2.2,     
-step=0.1
+step=0.05
 )
 
 cortisol = st.number_input(
