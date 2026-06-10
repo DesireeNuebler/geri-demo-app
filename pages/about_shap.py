@@ -38,7 +38,7 @@ items = [
     ("T3", t3),
     ("HOMA", homa),
     ("GH", gh),
-    ("GHBP", ghbp),
+    ("hGHBP", hghbp),
     ("Insulin", insulin),
     ("BMI", bmi)
 ]
@@ -66,7 +66,7 @@ labels = {"female": "Gender (female)",
     "bmi": "BMI  (kg/m²)",
     "igf1": "Baseline IGF-I (ng/ml)",
     "gh": "GH  (pmol/L)",
-    "ghbp": "GHBP (pmol/L)",
+    "hghbp": "GHBP (pmol/L)",
     "homa": "HOMA",
     "insulin": "Insulin (µU/ml)",
     "cortisol": "Cortisol (µg/dl)",
