@@ -16,4 +16,4 @@ streamlit run app.py #runs the app locally
 For more technical or methodical background, please refer to the research paper.
 
 ## Live Demo
-The app is publicily [available] {https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/}. 
+The app is publicily [available] (https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). 
