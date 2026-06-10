@@ -24,7 +24,7 @@ has_sarcopenia = st.radio("Does your patient has a sarcopenia diagnosis?", optio
 if has_sarcopenia == "Please select...":
     st.warning("No choice has been made.", width=210)
 
-elif has_sarcopenia is not "Yes":
+elif has_sarcopenia != "Yes":
     st.switch_page("pages/screening_exit.py")
 
 else:
