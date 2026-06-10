@@ -64,9 +64,10 @@ X_scaled = pd.DataFrame([[0,2,1,1,1,1,3,3,2,2]])  # example only
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1] 
 
-plt.clf()  # clear previous figures
-fig = shap.plots.waterfall(shap_values_pos[0], show=False)
+# Draw the SHAP waterfall plot on this figure
+shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
+
 
 
 if st.button("Understand feature contribution in the whole model."): 
