@@ -85,11 +85,10 @@ shap_values = explainer(X_scaled)
 
 shap_values_pos = shap_values[:, :, 1] 
 fig, ax = plt.subplots()
-ax.set_title("")
-ax.set_xlabel("")
 shap.plots.waterfall(shap_values_pos[0], show=False)
 st.pyplot(fig)
 
+st.info("The feature with the biggest contribution does not have to be the one with the biggest global importance. Non-linear relatioship suggest differently strong contributions based on the value.")
 
 
 if st.button("Understand feature contribution in the whole model."): 
