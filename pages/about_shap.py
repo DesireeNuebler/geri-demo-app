@@ -57,7 +57,10 @@ with open("assets/explainer.pkl", "rb") as f:
 # shap_values_pos = shap_values[:, :, 1]  
 #shap.plots.waterfall(shap_values_pos)
  # print(shap_values)
-print(explainer)
+
+X_scaled = np.array([[0,2,1,1,1,1,3,3,2,2]])  # example only
+shap_values = explainer(X_scaled)
+print(shap_values)
 
 if st.button("Understand feature contribution in the whole model."): 
     st.switch_page("pages/about_shap_gen.py")
