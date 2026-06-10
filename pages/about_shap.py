@@ -49,7 +49,18 @@ for i, (name, value) in enumerate(items):
 
 female =  1 if sex == "Female" else 0
 
-X = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
+skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
+insulin =  np.log1p(insulin)
+gh = np.log1p(gh)
+cortisol = np.log1p(cortisol)
+igfi = np.log1p(igfi)
+homa = np.log1p(homa)
+
+
+
+
+
+X_scaled = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 
 labels = {"female": "Gender (female)",
     "age": "Age (years)",
@@ -63,9 +74,8 @@ labels = {"female": "Gender (female)",
     "t3": "T3 (ng/dl)"
 }
 
-skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
-X_scaled =  np.log1p(X) # HUHU fix
-X_scaled = pd.DataFrame(X_scaled,columns=labels)
+
+X_scaled = pd.DataFrame(X_scaled, columns=labels)
 
 with open("assets/explainer.pkl", "rb") as f: 
     explainer = pickle.load(f) # trained explainer
