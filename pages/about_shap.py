@@ -51,17 +51,6 @@ female =  1 if sex == "Female" else 0
 
 X = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]] # order in training
 
-skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
-X_scaled =  np.log1p(X) # HUHU fix
-
-with open("assets/explainer.pkl", "rb") as f: 
-    explainer = pickle.load(f) # trained explainer
-
-# columns = [
-#     "female", "bmi", "insulin", "ghbp", "homa",
-#     "gh", "t3", "cortisol", "igf1", "age"
-# ]
-
 labels = {"female": "Gender (female)",
     "age": "Age (years)",
     "bmi": "BMI  (kg/m²)",
@@ -74,12 +63,12 @@ labels = {"female": "Gender (female)",
     "t3": "T3 (ng/dl)"
 }
 
-# X_scaled = pd.DataFrame(
-#     [[0,2,1,1,1,1,3,3,2,2]],  #exemplary
-#     columns=columns
-# )
+skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
+X_scaled =  np.log1p(X) # HUHU fix
+X_scaled = pd.DataFrame(X_scaled,columns=labels)
 
-X_scaled = X_scaled.rename(columns=labels)
+with open("assets/explainer.pkl", "rb") as f: 
+    explainer = pickle.load(f) # trained explainer
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1]
 
