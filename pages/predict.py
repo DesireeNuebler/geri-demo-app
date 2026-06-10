@@ -50,11 +50,26 @@ for i, (name, value) in enumerate(items):
 
 female =  1 if sex == "Female" else 0
 
-expert_features = ["female", "bmi", "insulin", "hghbp", "homa", "gh", "t3", "cortisol","igfi", "age"] # order in training script
-# order of X have to be exactly like in training # huhu check this!!!
-X = [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol,igf1, age]]
+
+expert_features = ["female", "bmi", "insulin", "hghbp", "homa", "gh", "t3", "cortisol","igfi", "age"] # order in training
 skewed = ["insulin", "gh", "cortisol", "igfi", "homa"]
-X_scaled =  np.log1p(X)
+
+insulin =  np.log1p(insulin)
+gh = np.log1p(gh)
+cortisol = np.log1p(cortisol)
+igf1 = np.log1p(igf1)
+homa = np.log1p(homa)
+
+original_cols = [
+    "female", "bmi", "insulin", "hghbp", "homa",
+    "gh", "t3", "cortisol", "igf1", "age"
+]
+
+X_scaled = pd.DataFrame(
+    [[female, bmi, insulin, hghbp, homa, gh, t3, cortisol, igf1, age]],
+    columns=original_cols
+)
+
 
 prediction = model.predict(X_scaled)
 predicted_prob = model.predict_proba(X_scaled)[:, 1].item()
