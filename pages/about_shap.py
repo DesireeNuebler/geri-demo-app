@@ -79,7 +79,7 @@ labels = {"female": "Gender (female)",
 #     columns=columns
 # )
 
-X_scaled = X_scaled.rename(columns=labels)
+# X_scaled = X_scaled.rename(columns=labels)
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1]
 
