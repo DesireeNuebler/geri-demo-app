@@ -66,4 +66,4 @@ zipp==3.23.0
 
 # Added compatible versions:
 catboost==1.2.2
-shap==0.42.1
+shap==0.49.1
