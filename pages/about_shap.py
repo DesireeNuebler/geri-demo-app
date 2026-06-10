@@ -111,5 +111,5 @@ if st.button("⬅ Back to prediction"):
     st.switch_page("pages/predict.py")
 
 
-if st.button("⬅ Back"): 
+if st.button("⬅ Back to Start."): 
     st.switch_page("main.py")
