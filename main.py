@@ -40,4 +40,4 @@ if st.button("Tell me more about the used data."):
     st.switch_page("pages/about_data.py")
 
 if st.button("Get in contact."):
-    print("desiree.nuebler@med.uni-muenchen.de")
+    st.markdown("[mailto:](desiree.nuebler@med.uni-muenchen.de)")
