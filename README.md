@@ -19,5 +19,6 @@ For more technical or methodical background, please refer to the research paper.
 The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). 
 
 ## Contact
-For any concern regarding the application or code please get in touch via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de)
-.
+For any concern regarding the application or code please get in touch with Desiree Nübler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de)
+. 
+For any concern regarding the medical background and approach please get in touch with Dr. Linda Deißler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de) .
