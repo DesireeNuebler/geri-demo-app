@@ -40,6 +40,5 @@ if st.button("Tell me more about the used data."):
     st.switch_page("pages/about_data.py")
 
 if st.button("Get in contact."):
-    st.markdown("For any concern regarding the application or code please get in touch with Desiree Nübler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de). 
-For any concern regarding the medical background and approach please get in touch with Dr. Linda Deißler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de) .")
+    st.markdown("For any concern regarding the application or code please get in touch with Desiree Nübler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de). For any concern regarding the medical background and approach please get in touch with Dr. Linda Deißler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de) .")
     
