@@ -25,10 +25,8 @@ st.markdown("This application has been developed to help to predict the risk for
 st.markdown("🎉 **Welcome to the app!** 🎉")
 st.toast("App loaded successfully!")
 
-
-
-if st.button("Please send me some ballons!"):
-    st.balloons()
+# if st.button("Please send me some ballons!"):
+#     st.balloons()
 
 if st.button("Go to prediction."):
     st.switch_page("pages/screening_sarc.py")
@@ -40,3 +38,6 @@ if st.button("Tell me more about the underlying model."):
 
 if st.button("Tell me more about the used data."):
     st.switch_page("pages/about_data.py")
+
+if st.button("Get in contact."):
+    print("desiree.nuebler@med.uni-muenchen.de")
