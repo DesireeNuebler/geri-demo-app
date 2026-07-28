@@ -18,12 +18,12 @@ This is short for **G**eriatric
 **R**esistance
 **I**nsights!
 """)
-st.markdown("This application has been developed to help to predict the risk for hormone resistance\
-             for eldery patients. Requesting certain pages might require some seconds.")
+st.markdown("This application has been developed to help to predict the risk for  GH-resistance\
+             for a subgroup of eldery patients. Requesting certain pages might require some seconds. Please navigate with the buttons rather than with internet browser functionalities.")
 
 
-st.markdown("🎉 **Welcome to the app!** 🎉")
-st.toast("App loaded successfully!")
+# st.markdown("🎉 **Welcome to the app!** 🎉")
+# st.toast("App loaded successfully!")
 
 # if st.button("Please send me some ballons!"):
 #     st.balloons()
