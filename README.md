@@ -21,4 +21,4 @@ The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.st
 ## Contact
 For any concern regarding the application or code please get in touch with Desiree Nübler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de)
 . 
-For any concern regarding the medical background and approach please get in touch with Dr. Linda Deißler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de) .
+For any concern regarding the medical background and approach please get in touch with Dr. Linda Deißler via [mail](mailto:Linda.Deissler@med.uni-muenchen.de) .
