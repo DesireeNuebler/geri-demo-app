@@ -11,9 +11,7 @@ with col2:
  
 st.title("About the Data")
 
-st.markdown("The patients included in this study are a subgroup of participants in the “MUnich SArcopenia Registry” (MUSAR),
-an ongoing registry study aimed at identifying modifiable risk factors and the underlying pathophysiological mechanisms of sarcopenia.
-Below you can see an overview of the patients characteristics with respect to the expert based predictors.")
+st.markdown("The patients included in this study are a subgroup of participants in the “MUnich SArcopenia Registry” (MUSAR), an ongoing registry study aimed at identifying modifiable risk factors and the underlying pathophysiological mechanisms of sarcopenia. Below you can see an overview of the patients characteristics with respect to the expert based predictors.")
 
 
 with open("assets/spider_plot.html", "r", encoding="utf-8") as f:
