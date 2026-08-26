@@ -33,12 +33,12 @@ cols = st.columns(2)
 items = [
     ("Age", age),
     ("Sex", sex),
-    ("IGF‑1", igf1),
+    ("IGF‑I", igf1),
     ("Cortisol", cortisol),
-    ("T3", t3),
+    ("fT3", t3),
     ("HOMA", homa),
     ("GH", gh),
-    ("hGHBP", hghbp),
+    ("GHBP", hghbp),
     ("Insulin", insulin),
     ("BMI", bmi)
 ]
@@ -73,11 +73,11 @@ X_scaled = pd.DataFrame(
 
 labels = {"female": "Gender (female)",
     "bmi": "BMI  (kg/m²)",
-    "insulin": "Insulin (µU/ml)",
+    "insulin": "Insulin (µIU/ml)",
     "hghbp": "GHBP (pmol/L)",
     "homa": "HOMA",
-    "gh": "GH  (pmol/L)",
-    "t3": "T3 (ng/dl)",
+    "gh": "GH  (ng/ml)",
+    "t3": "fT3 (pg/dl)",
     "cortisol": "Cortisol (µg/dl)",
     "igf1": "Baseline IGF-I (ng/ml)",
     "age": "Age (years)"

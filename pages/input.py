@@ -20,7 +20,7 @@ options=["Female", "Male"]
 )
 
 age = st.number_input(
-"Enter age",
+"Enter Age (years)",
 min_value=75,
 max_value=120,
 value=84,      # average
@@ -28,7 +28,7 @@ step=1
 )
 
 homa = st.number_input(
-"Enter HOMA Index",
+"Enter HOMA index",
 min_value=1.0,
 max_value=8.0, # average
 value=2.4,     
@@ -37,7 +37,7 @@ step=0.05
 
 
 insulin = st.number_input(
-"Enter Insulin",
+"Enter Insulin (µIU/ml)",
 min_value=2.0,
 max_value=25.0, # average
 value=9.0,     
@@ -46,7 +46,7 @@ step=0.05
 
 
 hghbp = st.number_input(
-"Enter GHBP",
+"Enter GHBP (pmol/l)",
 min_value=100.0,
 max_value=700.0, # default: average
 value=605.01,     
@@ -56,7 +56,7 @@ step=0.05
 
 
 gh = st.number_input(
-"Enter GH",
+"Enter GH (ng/ml)",
 min_value=0.0,
 max_value=15.0, # average
 value=1.4,     
@@ -65,7 +65,7 @@ step=0.05
 
 
 t3 = st.number_input(
-"Enter fT3",
+"Enter fT3 (pg/dl)",
 min_value=0.0,
 max_value=7.0, # average
 value=2.2,     
@@ -73,7 +73,7 @@ step=0.05
 )
 
 cortisol = st.number_input(
-"Enter Cortisol",
+"Enter Cortisol (µg/dl)",
 min_value=1.0,
 max_value=45.0, # average
 value=18.1,     
@@ -91,7 +91,7 @@ step=0.1
 
 
 igf1 = st.number_input(
-"Enter IGF-I",
+"Enter IGF-I (ng/ml)",
 min_value=5,
 max_value=90, # average
 value=52,     
