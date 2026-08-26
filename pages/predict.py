@@ -34,12 +34,12 @@ cols = st.columns(2)
 items = [
     ("Age", age),
     ("Sex", sex),
-    ("IGF‑1", igf1),
+    ("IGF‑I", igf1),
     ("Cortisol", cortisol),
-    ("T3", t3),
+    ("fT3", t3),
     ("HOMA", homa),
     ("GH", gh),
-    ("hGHBP", hghbp),
+    ("GHBP", hghbp),
     ("Insulin", insulin),
     ("BMI", bmi)
 ]
@@ -76,9 +76,6 @@ prediction = model.predict(X_scaled)
 predicted_prob = model.predict_proba(X_scaled)[:, 1].item()
 
 predicted_label = "RESISTANT" if prediction == 1 else "SENSITIVE"
-
-# HUHU some variables have to be scaled and or log transformed!! 
-# HUHU: Check predictions in code vs in app. app predictions seem to be unreasonable
 
 st.write("")
 st.write("")

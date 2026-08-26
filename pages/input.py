@@ -46,7 +46,7 @@ step=0.05
 
 
 hghbp = st.number_input(
-"Enter HGHBP",
+"Enter GHBP",
 min_value=100.0,
 max_value=700.0, # default: average
 value=605.01,     
@@ -65,7 +65,7 @@ step=0.05
 
 
 t3 = st.number_input(
-"Enter T3",
+"Enter fT3",
 min_value=0.0,
 max_value=7.0, # average
 value=2.2,     
@@ -91,7 +91,7 @@ step=0.1
 
 
 igf1 = st.number_input(
-"Enter IGF1",
+"Enter IGF-I",
 min_value=5,
 max_value=90, # average
 value=52,     
