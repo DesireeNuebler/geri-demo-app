@@ -11,7 +11,7 @@ with col2:
     st.image("assets/LMU_Klinikum_Logo.jpg", width=800)
 
 
-st.title("GERI - A Demo App for Risk Prediction")
+st.title("MUSAR-GRIP - A Demo App for Risk Prediction")
 st.subheader("""**Hello, my name is MUSAR-GRIP!**   
 This is short for MUnich SArcopenia Registry – Growth hormone Resistance In (pre-)sarcopenic geriatric Patients
 """)
