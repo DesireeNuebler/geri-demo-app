@@ -12,11 +12,8 @@ with col2:
 
 
 st.title("GERI - A Demo App for Risk Prediction")
-st.subheader("""**Hello, my name is GERI!**  
-This is short for **G**eriatric
-**E**ndocrine
-**R**esistance
-**I**nsights!
+st.subheader("""**Hello, my name is MUSAR-GRIP!**   
+This is short for MUnich SArcopenia Registry – Growth hormone Resistance In (pre-)sarcopenic geriatric Patients
 """)
 st.markdown("This application has been developed to help to predict the risk for  GH-resistance\
              for a subgroup of eldery patients. Requesting certain pages might require some seconds. Please navigate with the buttons rather than with internet browser functionalities.")
