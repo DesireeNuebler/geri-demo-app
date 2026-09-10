@@ -1,4 +1,4 @@
-'GEN SHAP PAGE'
+'MODEL SHAP VALUE PAGE'
 
 import streamlit as st
 

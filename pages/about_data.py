@@ -1,4 +1,4 @@
-'GEN DATA PAGE'
+'GEN DATA / EXPERT FEATURE OVERVIEW PAGE'
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -30,5 +30,5 @@ if st.button("See Correlations."):
     st.switch_page("pages/about_data_corr.py")
     
 
-if st.button("⬅ Back to Start"): 
+if st.button("⬅ Back to Start."): 
     st.switch_page("main.py")

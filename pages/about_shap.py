@@ -1,4 +1,4 @@
-'SHAP FOR SPECIFIC PREDICTION PAGE'
+'SHAP VALUE FOR SPECIFIC PREDICTION PAGE'
 
 import streamlit as st
 import pickle
@@ -86,7 +86,7 @@ labels = {"female": "Gender (female)",
 X_scaled = X_scaled.rename(columns=labels)
 
 with open("assets/explainer.pkl", "rb") as f: 
-    explainer = pickle.load(f) # trained explainer
+    explainer = pickle.load(f) # trained explainer 
 shap_values = explainer(X_scaled)
 shap_values_pos = shap_values[:, :, 1]
 

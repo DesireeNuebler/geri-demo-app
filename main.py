@@ -19,12 +19,7 @@ st.markdown("This application has been developed to help to predict the risk for
              for a subgroup of eldery patients. Requesting certain pages might require some seconds. Please navigate with the buttons rather than with internet browser functionalities.")
 
 
-# st.markdown("🎉 **Welcome to the app!** 🎉")
-# st.toast("App loaded successfully!")
-
-# if st.button("Please send me some ballons!"):
-#     st.balloons()
-
+# main navigation 
 if st.button("Go to prediction."):
     st.switch_page("pages/screening_sarc.py")
 

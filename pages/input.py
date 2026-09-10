@@ -1,4 +1,4 @@
-'INSERT VALUE PAGE'
+'INSERT PATIENT VALUE PAGE'
 
 import streamlit as st
 
