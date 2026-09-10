@@ -13,7 +13,7 @@ streamlit run app.py #runs the app locally
 ```
 
 ## Details
-For more technical or methodical background, please refer to the research paper.
+For more technical or methodical background, please refer to the research paper. The model was trained using Python 3.9. The publicily available streamlit framework required a higher Python version, see .runtime.txt.
 
 ## Live Demo
 The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). Please use the buttons in the app to navigate between the pages and features of the application, rather than using the web browser functions such as ‘Back’ (Alt + Left Arrow). If the app happens to be down, you simply need to ‘wake it up’.
