@@ -16,7 +16,7 @@ streamlit run app.py #runs the app locally
 For more technical or methodical background, please refer to the research paper.
 
 ## Live Demo
-The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). Please use the buttons in the app to navigate between the pages and features of the application, rather than using the web browser functions such as ‘Back’ (Alt + Left Arrow).
+The app is publicily [available](https://geri-demo-app-bkav5jhksyxuvh55bknalj.streamlit.app/). Please use the buttons in the app to navigate between the pages and features of the application, rather than using the web browser functions such as ‘Back’ (Alt + Left Arrow). If the app happens to be down, you simply need to ‘wake it up’.
 
 ## Contact
 For any concern regarding the application or code please get in touch with Desiree Nübler via [mail](mailto:Desiree.Nuebler@med.uni-muenchen.de). 
