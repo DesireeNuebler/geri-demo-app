@@ -9,7 +9,10 @@ The goal is to make the model’s behavior transparent, reproducible, and easy t
 Clone the repository and install dependencies:
 ```
 pip install -r requirements.txt
-streamlit run app.py #runs the app locally
+cd path-to-project-venv
+source Scripts/activate -- venv should be activated now
+cd path-to-project
+streamlit run app/main.py --server.port=8502 -- make sure you are calling the main app page
 ```
 
 ## Details
